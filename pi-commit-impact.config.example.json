@@ -1,0 +1,28 @@
+{
+  "jev": {
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "tokenEnv": "TYPESAFE_API_KEY",
+    "model": "jev-latest",
+    "timeoutMs": 10000
+  },
+  "includePatch": true,
+  "maxPatchBytes": 60000,
+  "criticalGlobs": [
+    ".github/workflows/**",
+    "infra/**",
+    "migrations/**",
+    "**/auth/**",
+    "package.json",
+    "config/production/**"
+  ],
+  "keywordWeights": {
+    "BREAKING CHANGE": 45,
+    "migration": 24,
+    "auth": 22
+  },
+  "thresholds": {
+    "medium": 35,
+    "high": 65,
+    "critical": 85
+  }
+}
