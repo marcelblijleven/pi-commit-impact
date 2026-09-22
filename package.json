@@ -1,6 +1,6 @@
 {
   "name": "pi-commit-impact",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Pi extension that estimates production regression risk for commits using Jev HTTP plus local heuristics.",
   "type": "module",
   "main": "index.ts",
