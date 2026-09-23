@@ -9,7 +9,7 @@ npm install
 pi --extension .
 ```
 
-Then use:
+Then use the Pi slash command:
 
 ```text
 /commit-impact
@@ -19,6 +19,24 @@ Then use:
 ```
 
 The extension also registers a model-callable `commit_impact` tool with the same core options. The tool supports `lastCommits`, so Pi can directly answer natural requests such as “what's the risk score of the last 3 commits?” without translating that into a git range itself.
+
+## Use from other agents
+
+Other coding agents can call the CLI through their shell tool:
+
+```bash
+npx pi-commit-impact --last 3 --format json
+commit-impact HEAD --format markdown --fail-on high
+commit-impact main..HEAD --config pi-commit-impact.config.json
+```
+
+When developing from this repo, run the local executable directly:
+
+```bash
+./commit-impact.js --last 3 --format json
+```
+
+The CLI exits with code `1` when `--fail-on` is supplied and the analyzed risk tier meets or exceeds the threshold, making it suitable for CI or agent guardrails.
 
 ## Configuration
 

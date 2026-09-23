@@ -4,6 +4,9 @@
   "description": "Pi extension that estimates production regression risk for commits using Jev HTTP plus local heuristics.",
   "type": "module",
   "main": "index.ts",
+  "bin": {
+    "commit-impact": "./commit-impact.js"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/**/*.test.ts",
@@ -18,11 +21,11 @@
   ],
   "dependencies": {
     "@earendil-works/pi-ai": "latest",
-    "@earendil-works/pi-coding-agent": "latest"
+    "@earendil-works/pi-coding-agent": "latest",
+    "tsx": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
-    "tsx": "latest",
     "typescript": "latest"
   },
   "engines": {
